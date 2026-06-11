@@ -8,6 +8,40 @@
 <meta property="og:title" content="Frank4CARB — Mobile Clean Truck Check Testing">
 <meta property="og:description" content="Certified mobile CARB emissions testing for fleets and owner-operators in Southern California.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://frank4carb.com">
+<link rel="canonical" href="https://frank4carb.com">
+
+<!-- ============================================================
+     GOOGLE ANALYTICS (GA4) — Measurement ID G-6K9ZH3E60Q
+     ============================================================ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6K9ZH3E60Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6K9ZH3E60Q');
+</script>
+
+<!-- SEO: tells Google what this business is and where it operates -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutomotiveBusiness",
+  "name": "Frank4CARB LLC",
+  "description": "Certified mobile CARB Clean Truck Check emissions testing for heavy-duty diesel trucks and buses — opacity, visual, and OBD inspections with same-day results filed to CTC-VIS.",
+  "url": "https://frank4carb.com",
+  "email": "frank4carb@gmail.com",
+  "priceRange": "$$",
+  "areaServed": [
+    { "@type": "City", "name": "Los Angeles" },
+    { "@type": "AdministrativeArea", "name": "Orange County" },
+    { "@type": "AdministrativeArea", "name": "Inland Empire" },
+    { "@type": "State", "name": "California" }
+  ],
+  "knowsAbout": ["CARB Clean Truck Check", "Opacity Testing", "OBD Compliance Testing", "Visual Emissions Inspection", "CTC-VIS Reporting"]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -252,6 +286,32 @@
   .contact-line{display:flex;align-items:center;gap:12px;font-family:"IBM Plex Mono",monospace;font-size:15px;margin:12px 0;color:var(--fg)}
   .contact-line svg{width:18px;height:18px;color:var(--amber);flex:none}
   .contact-line a:hover{color:var(--amber)}
+  .ctc-btn{
+    display:inline-flex;align-items:center;gap:11px;margin-top:6px;
+    font-family:"Saira Condensed",sans-serif;font-weight:700;font-size:18px;letter-spacing:.03em;text-transform:uppercase;
+    color:var(--amber);background:rgba(247,165,33,.07);
+    border:1px solid var(--amber-deep);border-radius:var(--radius);padding:13px 20px;
+    transition:background .2s,transform .15s,box-shadow .2s;
+  }
+  .ctc-btn svg{width:19px;height:19px;flex:none}
+  .ctc-btn .ext{width:15px;height:15px;opacity:.8}
+  .ctc-btn:hover{background:var(--amber);color:#15191d;transform:translateY(-2px);box-shadow:0 10px 24px -10px rgba(247,165,33,.5)}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+
+  /* prominent CTC-VIS band (bottom of page) */
+  .portal-cta{position:relative;background:linear-gradient(180deg,var(--steel-800),var(--steel-900));border-top:1px solid var(--line-soft)}
+  .portal-stripe{height:6px;background:var(--hazard);opacity:.9}
+  .portal-inner{display:flex;align-items:center;justify-content:space-between;gap:36px;padding:54px 24px;flex-wrap:wrap}
+  .portal-copy{max-width:620px}
+  .portal-copy h2{font-size:clamp(28px,3.6vw,42px);text-transform:uppercase;margin-top:12px}
+  .portal-copy p{color:var(--fg-2);margin:14px 0 0;font-size:15px;max-width:560px}
+  .ctc-btn-lg{font-size:23px;padding:18px 30px;gap:14px;flex:none}
+  .ctc-btn-lg svg{width:24px;height:24px}
+  .ctc-btn-lg .ext{width:18px;height:18px}
+  @media(max-width:680px){
+    .portal-inner{flex-direction:column;align-items:flex-start;gap:24px;padding:44px 24px}
+    .ctc-btn-lg{width:100%;justify-content:center}
+  }
 
   form{background:linear-gradient(180deg,var(--steel-800),var(--steel-900));border:1px solid var(--line);border-radius:8px;padding:28px}
   .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -593,17 +653,14 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
           <span>Los Angeles · Orange County · Inland Empire</span>
         </div>
-        <div class="contact-line">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
-          <a href="https://cleantruckcheck.arb.ca.gov/" target="_blank" rel="noopener">CTC-VIS portal ↗</a>
-        </div>
       </div>
 
-      <!-- NOTE: Submits by opening a pre-filled email to frank4carb@gmail.com.
-           To receive submissions automatically in your inbox instead, sign up at formspree.io,
-           then change the form's onsubmit to a normal POST: set
-           method="POST" action="https://formspree.io/f/XXXXXXXX" and delete the onsubmit handler. -->
-      <form id="quoteForm" onsubmit="return buildQuote(event)" novalidate>
+      <!-- QUOTE FORM — submissions land in your inbox via Formspree (free, ~50/mo).
+           SETUP: at https://formspree.io create a form (set the destination to frank4carb@gmail.com),
+           copy the endpoint it gives you, and replace YOUR_FORM_ID below with your form's ID. -->
+      <form id="quoteForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="New quote request — Frank4CARB">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">
         <div class="form-grid">
           <div class="field">
             <label for="name">Name <span class="req">*</span></label>
@@ -658,6 +715,23 @@
   </section>
 </div>
 
+<!-- Prominent CTC-VIS portal link (bottom of page) -->
+<section class="portal-cta" id="portal">
+  <div class="portal-stripe"></div>
+  <div class="wrap portal-inner">
+    <div class="portal-copy">
+      <span class="eyebrow">CTC-VIS Portal</span>
+      <h2>Check your status or add a vehicle.</h2>
+      <p>The official CARB Clean Truck Check (CTC-VIS) portal — check a vehicle's compliance status, register a new vehicle, or submit your test results.</p>
+    </div>
+    <a href="https://cleantruckcheck.arb.ca.gov/" target="_blank" rel="noopener" class="ctc-btn ctc-btn-lg">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9h18M9 21V9M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/></svg>
+      Open the CTC-VIS Portal
+      <svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M9 7h8v8"/></svg>
+    </a>
+  </div>
+</section>
+
 <footer>
   <div class="foot-stripe"></div>
   <div class="wrap">
@@ -696,11 +770,19 @@
         <a href="https://cleantruckcheck.arb.ca.gov/" target="_blank" rel="noopener">CTC-VIS portal</a>
       </nav>
     </div>
-    <p class="copy">© 2025 Frank4CARB LLC. All rights reserved. · Certified mobile Clean Truck Check testing · Southern California</p>
+    <p class="copy">© <span id="copyrightYear">2025</span> Frank4CARB LLC. All rights reserved. · Certified mobile Clean Truck Check testing · Southern California</p>
   </div>
 </footer>
 
 <script>
+  // copyright year — shows a range from the start year up to the current year, auto-updating
+  (function(){
+    var start = 2025;
+    var now = new Date().getFullYear();
+    var el = document.getElementById('copyrightYear');
+    if (el) el.textContent = now > start ? (start + '–' + now) : String(start);
+  })();
+
   // mobile nav
   const tgl = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
@@ -725,30 +807,49 @@
   }, { threshold:.6 });
   steps.forEach(s => sio.observe(s));
 
-  // quote form -> prefilled email
-  function buildQuote(e){
+  // quote form -> submit to Formspree (stays on page, shows confirmation)
+  const quoteForm = document.getElementById('quoteForm');
+  const formMsg = document.getElementById('formMsg');
+  quoteForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const f = e.target;
-    if (!f.checkValidity()){ f.reportValidity(); return false; }
-    const g = n => (f.elements[n]?.value || '').trim();
-    const lines = [
-      'NEW QUOTE REQUEST — Frank4CARB','',
-      'Name:            ' + g('name'),
-      'Email:           ' + g('email'),
-      '# of vehicles:   ' + (g('count') || '1'),
-      'VIN:             ' + g('vin'),
-      'License plate:   ' + g('plate'),
-      'Year:            ' + g('year'),
-      'Fuel type:       ' + g('fuel'),
-      'Service location:' + ' ' + g('location'),
-      '','Notes:', g('notes') || '(none)'
-    ].join('\n');
-    const subject = 'Quote Request — ' + (g('name') || 'New customer');
-    document.getElementById('formMsg').textContent = 'Opening your email app…';
-    window.location.href = 'mailto:frank4carb@gmail.com?subject=' +
-      encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines);
-    return false;
-  }
+    if (!quoteForm.checkValidity()){ quoteForm.reportValidity(); return; }
+
+    // Not set up yet? Fall back to opening an email so no request is ever lost.
+    if (quoteForm.action.includes('YOUR_FORM_ID')){
+      const g = n => (quoteForm.elements[n]?.value || '').trim();
+      const body = ['Name: '+g('name'),'Email: '+g('email'),'# vehicles: '+(g('count')||'1'),
+        'VIN: '+g('vin'),'Plate: '+g('plate'),'Year: '+g('year'),'Fuel: '+g('fuel'),
+        'Location: '+g('location'),'','Notes: '+(g('notes')||'(none)')].join('\n');
+      window.location.href = 'mailto:frank4carb@gmail.com?subject=' +
+        encodeURIComponent('Quote Request — '+(g('name')||'New customer')) +
+        '&body=' + encodeURIComponent(body);
+      return;
+    }
+
+    const btn = quoteForm.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    formMsg.style.color = 'var(--muted)';
+    formMsg.textContent = 'Sending…';
+    try {
+      const res = await fetch(quoteForm.action, {
+        method: 'POST',
+        body: new FormData(quoteForm),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok){
+        quoteForm.reset();
+        formMsg.style.color = 'var(--pass)';
+        formMsg.textContent = '✓ Thanks — your request was sent. We\u2019ll be in touch shortly.';
+      } else {
+        throw new Error('bad response');
+      }
+    } catch (err){
+      formMsg.style.color = 'var(--amber)';
+      formMsg.innerHTML = 'Something went wrong — please email <a href="mailto:frank4carb@gmail.com" style="color:var(--amber)">frank4carb@gmail.com</a>.';
+    } finally {
+      btn.disabled = false;
+    }
+  });
 </script>
 </body>
 </html>
