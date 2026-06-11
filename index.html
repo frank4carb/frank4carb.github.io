@@ -660,47 +660,88 @@
       <form id="quoteForm" action="https://formspree.io/f/mjgdeowz" method="POST" novalidate>
         <input type="hidden" name="_subject" value="New quote request — Frank4CARB">
         <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">
+        <p class="form-intro">Just the basics is fine — fill in what you can and we'll follow up. Fleets: skip the per-truck details.</p>
         <div class="form-grid">
           <div class="field">
-            <label for="name">Name <span class="req">*</span></label>
-            <input id="name" name="name" required placeholder="Your name">
+            <label for="name">Contact name</label>
+            <input id="name" name="name" placeholder="Your name">
           </div>
           <div class="field">
-            <label for="email">Email <span class="req">*</span></label>
-            <input id="email" name="email" type="email" required placeholder="you@company.com">
+            <label for="company">Company / fleet name</label>
+            <input id="company" name="company" placeholder="If applicable">
           </div>
           <div class="field">
-            <label for="vin">VIN <span class="req">*</span></label>
-            <input id="vin" name="vin" required placeholder="17-character VIN">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@company.com">
           </div>
           <div class="field">
-            <label for="plate">License plate <span class="req">*</span></label>
-            <input id="plate" name="plate" required placeholder="Plate number">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" placeholder="(000) 000-0000">
           </div>
           <div class="field">
-            <label for="year">Year <span class="req">*</span></label>
-            <input id="year" name="year" type="number" min="1980" max="2027" required placeholder="e.g. 2015">
-          </div>
-          <div class="field">
-            <label for="fuel">Fuel type <span class="req">*</span></label>
-            <select id="fuel" name="fuel" required>
-              <option value="" disabled selected>Select…</option>
-              <option>Diesel</option>
-              <option>Alt-fuel (CNG / LNG / Propane)</option>
-              <option>Other</option>
+            <label for="customer_type">I'm a…</label>
+            <select id="customer_type" name="customer_type">
+              <option value="" selected>Select…</option>
+              <option>Owner-operator (1 truck)</option>
+              <option>Small fleet (2–10)</option>
+              <option>Large fleet (10+)</option>
+              <option>Not sure</option>
             </select>
           </div>
           <div class="field">
             <label for="count"># of vehicles</label>
-            <input id="count" name="count" type="number" min="1" value="1">
+            <select id="count" name="count">
+              <option value="" selected>Select…</option>
+              <option>1</option>
+              <option>2–5</option>
+              <option>6–20</option>
+              <option>21–50</option>
+              <option>50+</option>
+            </select>
           </div>
           <div class="field">
-            <label for="location">Service location <span class="req">*</span></label>
-            <input id="location" name="location" required placeholder="City or ZIP">
+            <label for="service">Service needed</label>
+            <select id="service" name="service">
+              <option value="" selected>Not sure — recommend for me</option>
+              <option>Full Clean Truck Check</option>
+              <option>Opacity (smoke) test</option>
+              <option>OBD compliance test</option>
+              <option>Visual emissions inspection</option>
+              <option>Multiple / whole fleet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="fuel">Fuel type</label>
+            <select id="fuel" name="fuel">
+              <option value="" selected>Select…</option>
+              <option>Diesel</option>
+              <option>Alt-fuel (CNG / LNG / Propane)</option>
+              <option>Mixed fleet</option>
+              <option>Not sure</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="location">Service location</label>
+            <input id="location" name="location" placeholder="City or ZIP where we'd come to you">
+          </div>
+          <div class="field full">
+            <p class="form-subnote">Single truck? Add its details below — optional, skip if you're a fleet.</p>
+          </div>
+          <div class="field">
+            <label for="year">Year</label>
+            <input id="year" name="year" type="number" min="1980" max="2027" placeholder="e.g. 2015">
+          </div>
+          <div class="field">
+            <label for="plate">License plate</label>
+            <input id="plate" name="plate" placeholder="Plate number">
+          </div>
+          <div class="field full">
+            <label for="vin">VIN</label>
+            <input id="vin" name="vin" placeholder="17-character VIN">
           </div>
           <div class="field full">
             <label for="notes">Anything else?</label>
-            <textarea id="notes" name="notes" placeholder="Deadlines, fleet details, access notes…"></textarea>
+            <textarea id="notes" name="notes" placeholder="Deadlines, locations, access notes — whatever helps us quote you."></textarea>
           </div>
         </div>
         <div class="form-actions">
